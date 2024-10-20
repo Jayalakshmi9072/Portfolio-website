@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth; /* This enables smooth scrolling */
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="logo.jpg" class="logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Student,Cochin University of Science and Technology</p>
+            <h3>Hi, I'm <span>Jayalakshmi Jayaraj</span><br></h3>
+        </div>
+    </div>
+</div>
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="image.png.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I’m Jayalakshmi, an MCA student at Cochin University of Science and Technology with a passion for software development. I have gained a solid foundation in programming languages and I’m always eager to learn new technologies. My adaptability allows me to thrive in any environment, whether working independently or as part of a team. I’m excited to contribute my skills and creativity to projects that make a real difference.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link"onclick="opentab('skills')">skills</p>
+                    <p class="tab-links"onclick="opentab('education')">education</p>
+                    <p class="tab-links"onclick="opentab('Internship')">Internship</p>
+                    <p class="tab-links"onclick="opentab('Interests')">Interests</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <h3>Technical Skills</h3>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C programming</li>
+                        <li>SQL</li>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>Data Structures and Algorithms</li>
+                    </ul>
+                    <ul>
+                        <h3>Soft Skills</h3>
+                        <li>Adaptability</li>
+                        <li>Team Work</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span class="year-range">2023-present</span><br>Masters in Computer Application<br>Cochin University of Science and Technology<br><br></li>
+                        <li><span class="year-range">2020-2023</span><br>BSc Mathematics<br>Nirmala College,Muvattupuzha<br><br></li>
+                        <li><span class="year-range">2018-2020</span><br>Plus Two<br>St Augustine's GHSS, Muvattupuzha</li>
+                        
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Internship">
+                    <h3>IBM Skillsbuild Internship<br></h3>
+                    <p>This internship was instrumental in building a robust foundation in artificial intelligence and machine learning. It not only equipped me with the technical skills necessary for a career in AI but also provided a broader understanding of the impactand potential applications of these technologies in various industries. My exposure to IBM Watsonx, in particular, was invaluable in learning how to utilize advanced AI tools for practical and impactful solutions.</p>
+                </div>
+                <div class="tab-contents" id="Interests">
+                    <ul>
+                        <li>Software development</li>
+                        <li>Web development</li>
+                        <li>Data Analysis</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div id="Projects">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <h3>EneryON Website with Chatbot Deployment</h3>
+        <p>Developed an online marketplace for bioenergy solutions with integrated Chatbot functionality powered by IBM watson.Developed a user-friendly platform on which customers can purchase bioenergy products and services, enhanced customer engagement through AI-driven support on inquiries and product recommendations.</p>
+        <a href="http://localhost:8000/energyON.zip" download>Download Project Files</a>
+    </div>
+</div>
+
+
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><a href="mailto:jayalakshmijayaraj02@gmail.com">jayalakshmijayaraj02@gmail.com</a></p>
+                <p1>9072911303</p1>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form id="contact-form" onsubmit="return handleSubmit(event)">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <div id="thank-you-message" style="display:none;">
+                    <h3>Thank you for your message!</h3>
+                    <p><strong>Name:</strong> <span id="display-name"></span></p>
+                    <p><strong>Email:</strong> <span id="display-email"></span></p>
+                    <p><strong>Message:</strong> <span id="display-message"></span></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent form from submitting
+
+        // Get user input
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Display the thank you message with user input
+        document.getElementById('display-name').innerText = name;
+        document.getElementById('display-email').innerText = email;
+        document.getElementById('display-message').innerText = message;
+
+        // Show the thank you message and hide the form
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('thank-you-message').style.display = 'block';
+    }
+</script>
+    
+</body>
+</html>
